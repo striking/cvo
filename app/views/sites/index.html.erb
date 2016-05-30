@@ -1,1 +1,21 @@
 <h1>Sites</h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Address</th>
+    <th>suburb</th>
+    <th></th>
+  </tr>
+<% @sites.each do |site| %>
+  <tr>
+    <td><%= link_to(site.title, site_path(site)) %></td>
+    <td><%= site.address %></td>
+    <td><%= site.suburb %></td>
+    <td>
+      <%= link_to 'Edit', edit_site_path(site) %> |
+      <%= link_to 'Delete', site_path(site), method:
+                  :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+  <% end %>
+</table>
