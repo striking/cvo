@@ -2,4 +2,5 @@
 <%= @site.address %>
 <%= @site.suburb %>
 
-<%= link_to 'Edit', edit_site_path(@site) %>
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'delete', site_path(@site), method: :delete, data: {confirm: 'Are you sure?'} %>
