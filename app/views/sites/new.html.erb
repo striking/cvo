@@ -1,0 +1,8 @@
+<h1>Add new Site</h1>
+
+<%= simple_form_for @site do |f| %>
+  <%= f.input :title, label: 'Give your site a title' %>
+  <%= f.input :address, label: "Enter the Site's street address" %>
+  <%= f.input :suburb, label: 'Site suburb' %>
+  <%= f.button :submit %>
+<% end %>
