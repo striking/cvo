@@ -1,0 +1,28 @@
+<h1 class="page-header">Lising Customers</h1>
+
+<table>
+  <tr>
+    <th>Company Name</th>
+    <th>ABN</th>
+    <th>Address</th>
+    <th>Suburb</th>
+    <th>email</th>
+    <th>Phone</th>
+    <th></th>
+  </tr>
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= link_to(customer.company_name, customer_path(customer)) %></td>
+    <td><%= customer.abn %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.suburb %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.phone %></td>
+    <td>
+      <%= link_to 'Edit', edit_customer_path(customer) %>
+      <%= link_to 'Delete', customer_path(customer), method:
+                            :destroy, data: {confirm: 'Are you sure?'} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
